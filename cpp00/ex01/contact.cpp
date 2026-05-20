@@ -1,6 +1,5 @@
 #include <iostream>
 #include "contact.hpp"
-using namespace std;
 
 Contact::Contact(void)
 {
@@ -31,21 +30,21 @@ void    Contact::new_contact(void)
 	while (i < 5)
 	{
 		if (i == 0)
-			cout << "Enter their first name : ";
+			std::cout << "Enter their first name : ";
 		if (i == 1)
-			cout << "Enter their last name : ";
+			std::cout << "Enter their last name : ";
 		if (i == 2)
-			cout << "Enter their nickname : ";
+			std::cout << "Enter their nickname : ";
 		if (i == 3)
-			cout << "Enter their phone number : ";
+			std::cout << "Enter their phone number : ";
 		if (i == 4)
-			cout << "Enter their most dark and twisted secret >:D : ";
-		getline(cin >> ws, this->info[i]);
+			std::cout << "Enter their most dark and twisted secret >:D : ";
+		getline(std::cin >> std::ws, this->info[i]);
 		if (i == 3)
 		{
 			if(is_num(this->info[3]) == 0)
 			{
-				cout << "that's not a phone number !\n";
+				std::cout << "that's not a phone number !\n";
 			}
 			else
 				i++;
@@ -62,16 +61,16 @@ void	Contact::print_tab(void)
 	{
 		if (this->info[i].length() > 10)
 		{
-			cout << this->info[i].substr(0, 9);
-			cout << ".";
+			std::cout << this->info[i].substr(0, 9);
+			std::cout << ".";
 		}
 		else{
-			cout << this->info[i];
+			std::cout << this->info[i];
 			int space = 10 - this->info[i].length();
 			while (space-- > 0)
-				cout << " ";
+				std::cout << " ";
 		}
-		cout << "|";
+		std::cout << "|";
 		i++;
 	}
 }
@@ -82,17 +81,17 @@ void	Contact::print_info(void)
 	while (i < 5)
 	{
 		if (i == 0)
-			cout << "Their first name : ";
+			std::cout << "Their first name : ";
 		if (i == 1)
-			cout << "Their last name : ";
+			std::cout << "Their last name : ";
 		if (i == 2)
-			cout << "Their nickname : ";
+			std::cout << "Their nickname : ";
 		if (i == 3)
-			cout << "Their phone number : ";
+			std::cout << "Their phone number : ";
 		if (i == 4)
-			cout << "Their most dark and twisted secret >:D : ";
-		cout << info[i];
-		cout << "\n";
+			std::cout << "Their most dark and twisted secret >:D : ";
+		std::cout << info[i];
+		std::cout << "\n";
 		i++;
 	}
 }

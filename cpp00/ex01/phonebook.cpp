@@ -1,8 +1,7 @@
 #include <iostream>
 #include "phonebook.hpp"
-using namespace std;
 
-int	string_atoi(string input)
+int	string_atoi(std::string input)
 {
 	int	i = 0;
 	int	sign = 1;
@@ -31,7 +30,7 @@ void    phonebook::NEW(void)
 	this->index++;
 	if (this->index >= 8)
 	{
-		cout << "full";
+		std::cout << "full";
 		this->is_full = true;
 		this->index = this->index % 8;
 	}
@@ -47,23 +46,23 @@ void    phonebook::SEARCH(void)
 		max = this->index;
 	if (max == 0)
 	{
-		cout << "*No contact saved yet*\n";
+		std::cout << "*No contact saved yet*\n";
 		return ;
 	}
 	while (i < max)
 	{
-		cout << i;
-		cout << ".    |";
+		std::cout << i;
+		std::cout << ".    |";
 		this->contact[i].print_tab();
 		i++;
-		cout << endl;
+		std::cout << std::endl;
 	}
-	cout << "enter the number of the contact you are searching for : ";
-	string input;
-	getline(cin >> ws, input);
+	std::cout << "enter the number of the contact you are searching for : ";
+	std::string input;
+	std::getline(std::cin >> std::ws, input);
 	i = string_atoi(input);
 	if (i >= max || i < 0)
-		cout << "invalid number\n";
+		std::cout << "invalid number\n";
 	else
 		this->contact[i].print_info();
 }
