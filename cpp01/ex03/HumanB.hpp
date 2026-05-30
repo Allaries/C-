@@ -1,13 +1,14 @@
-#include "Weapon.hpp"
+#include "HumanA.hpp"
 
 class HumanB
 {
-private:
-	std::string	name;
-	Weapon		weapon;
-public:
-	HumanB(/* args */);
-	~HumanB();
-	void	attack();
+	private:
+		std::string	name;
+		Weapon		*weapon;
+	public:
+		HumanB(std::string name);
+		~HumanB();
+		void	attack();
+		void	setWeapon(Weapon *nWeapon);
 };
 

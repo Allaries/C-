@@ -1,7 +1,7 @@
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp
+SRC = HumanA.cpp  HumanB.cpp  main.cpp  Weapon.cpp
 NAME = violence
 
 OBJDIR = obj
