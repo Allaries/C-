@@ -3,7 +3,7 @@
 
 int main( void ) 
 {
-	Fixed a;
+	Fixed a(0);
 	Fixed b(10);
 	Fixed c(42.42f);
 	Fixed d(10.0f);
@@ -17,5 +17,18 @@ int main( void )
 	std::cout << "is b == d ? " << (b==d) << std::endl;
 	std::cout << "is b > d ? " << (b>d) << std::endl;
 	std::cout << "is c <= d ? " << (c<=d) << std::endl;
+	std::cout << "a + b = " << (c+b) << std::endl;
+	std::cout << "d - c = " << (c-d) << std::endl;
+	std::cout << "c * d = " << (c*d) << std::endl;
+	std::cout << "c / d = " << (c/b) << std::endl;
+
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+
+	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::min( a, b ) << std::endl;
 	return 0;
 }
