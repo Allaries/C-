@@ -1,4 +1,4 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(void)
 {
@@ -13,10 +13,9 @@ int main(void)
     // Thierry.beRepaired(7);
     // Thierry.attack("Martinez");
 
-    ScavTrap Miguel("Miguel");
+    FragTrap Miguel("Miguel");
     Miguel.takeDamage(10);
     Miguel.attack("random people");
-    Miguel.guardGate();
     
 
     

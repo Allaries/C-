@@ -14,7 +14,7 @@ void	ClapTrap::attack(const std::string& target)
 		return ;
 	}
 	this->Energy--;
-	std::cout << "ClapTrap " << this->name << " attacked " << target << " causing him to take " << this->Attack << " point of damage !!" << std::endl;
+	std::cout << this->name << " attacked " << target << " causing him to take " << this->Attack << " point of damage !!" << std::endl;
 }
 
 
@@ -26,7 +26,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->Energy--;
-	std::cout << "ClapTrap " << this->name << " healed himself " << amount << " he is now at " << this->HitPoint << " HP !" << std::endl;
+	std::cout << this->name << " healed himself " << amount << " he is now at " << this->HitPoint << " HP !" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name):name(name), HitPoint(10), Energy(10), Attack(0)
