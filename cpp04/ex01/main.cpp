@@ -7,13 +7,6 @@
 
 int main()
 {
-    animal* amalgamate = new animal();
-    amalgamate->getType();
-    amalgamate->makeSound();
-    delete amalgamate;
-
-    std::cout << std::endl << std::endl;
-
     animal* doggo = new dog();
     doggo->getType();
     doggo->makeSound();

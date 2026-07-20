@@ -1,8 +1,8 @@
 CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp src/animal.cpp src/dog.cpp src/cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp
-NAME = Polymorphism
+SRC = main.cpp src/animal.cpp src/dog.cpp src/cat.cpp src/WrongAnimal.cpp src/WrongCat.cpp src/brain.cpp
+NAME = Brain
 
 OBJDIR = AAA
 all : $(NAME)
