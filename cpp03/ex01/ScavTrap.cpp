@@ -10,7 +10,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-    std::cout << "ScavTrap name construcor called" << std::endl;
+    std::cout << "[ScavTrap] name construcor called" << std::endl;
     this->HitPoint = 100;
     this->Energy = 50;
     this->Attack = 20;
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap destructor called" << std::endl;
+	std::cout << "[ScavTrap] destructor called" << std::endl;
 }
 
 void    ScavTrap::guardGate()
@@ -52,5 +52,20 @@ void	ScavTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->Energy--;
+	this->HitPoint += amount;
 	std::cout << "[ScavTrap] " << this->name << " healed himself " << amount << " he is now at " << this->HitPoint << " HP !" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const& other) : ClapTrap(other)
+{
+    std::cout << "[Scavtrap] Copy constructor called\n";
+    *this = other;
+}
+
+ScavTrap& ScavTrap::operator=(ScavTrap const &other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+    std::cout << "[ScavTrap] Copy assignment operator called\n";
+    return *this;
 }

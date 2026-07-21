@@ -9,6 +9,8 @@ private:
 public:
     ScavTrap();
     ScavTrap(std::string name);
+    ScavTrap(const ScavTrap &other);
+    ScavTrap& operator=(ScavTrap const &other);
     ~ScavTrap();
     void	attack(const std::string& target);
 	void	takeDamage(unsigned int amount);

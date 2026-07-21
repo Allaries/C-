@@ -13,5 +13,7 @@ public:
 	void	beRepaired(unsigned int amount);
 	ClapTrap();
 	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const &other);
+	ClapTrap& operator=(ClapTrap const &other);
 	~ClapTrap();
 };

@@ -52,5 +52,20 @@ void	FragTrap::beRepaired(unsigned int amount)
 		return ;
 	}
 	this->Energy--;
+	this->HitPoint += amount;
 	std::cout << "[FragTrap] " << this->name << " healed himself " << amount << " he is now at " << this->HitPoint << " HP !" << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const& other) : ClapTrap(other)
+{
+    std::cout << "[Scavtrap] Copy constructor called\n";
+    *this = other;
+}
+
+FragTrap& FragTrap::operator=(FragTrap const &other)
+{
+	if (this != &other)
+		ClapTrap::operator=(other);
+    std::cout << "[FragTrap] Copy assignment operator called\n";
+    return *this;
 }
