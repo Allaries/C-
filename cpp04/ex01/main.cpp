@@ -10,5 +10,11 @@ int main()
     animal* doggo = new dog();
     doggo->getType();
     doggo->makeSound();
+
+    dog* boii = new dog(*dynamic_cast<dog*>(doggo));
+    boii->getType();
+    boii->makeSound();
+    boii->readMind();
+    delete boii;
     delete doggo;
 }

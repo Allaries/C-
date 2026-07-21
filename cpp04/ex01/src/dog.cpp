@@ -6,11 +6,23 @@ void	dog::makeSound()
     return ;
 }
 
+void    dog::readMind()
+{
+    this->caboche->firstIdea();
+}
+
 dog::dog() : animal()
 {
     std::cout << "A good boy appeared" << std::endl;
     this->setType("Dog");
     this->caboche = new brain();
+}
+
+dog::dog(const dog& other) : animal(other)
+{
+    *this = other;
+    this->caboche = new brain(*other.caboche);
+    std::cout << "dog cloned" << std::endl;
 }
 
 dog::~dog()

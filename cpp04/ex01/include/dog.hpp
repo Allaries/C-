@@ -11,7 +11,9 @@ private:
     brain *caboche;
 public:
     dog();
+    dog(const dog& other);
     ~dog();
+    void    readMind();
     void    makeSound();
 };
 

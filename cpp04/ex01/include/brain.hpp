@@ -9,6 +9,7 @@ private:
 public:
     brain();
     ~brain();
+    void    firstIdea();
 };
 
 
