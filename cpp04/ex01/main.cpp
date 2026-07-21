@@ -17,4 +17,27 @@ int main()
     boii->readMind();
     delete boii;
     delete doggo;
+
+    std::cout << std::endl << std::endl;
+
+    animal* kitty = new cat();
+    kitty->getType();
+    kitty->makeSound();
+    delete kitty;
+
+    std::cout << std::endl << std::endl;
+
+    Wanimal* pinguin = new Wanimal();
+    pinguin->getType();
+    pinguin->makeSound();
+    delete pinguin;
+
+    std::cout << std::endl << std::endl;
+
+    Wanimal* camel = new Wcat();
+    camel->getType();
+    camel->makeSound();
+    delete camel;
+
+    std::cout << std::endl;
 }

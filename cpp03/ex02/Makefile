@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp ClapTrap.cpp FragTrap.cpp
-NAME = ClapTrap
+NAME = FragTrap
 
 OBJDIR = obj
 all : $(NAME)

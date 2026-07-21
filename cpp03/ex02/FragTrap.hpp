@@ -10,5 +10,8 @@ public:
     FragTrap();
     FragTrap(std::string name);
     ~FragTrap();
+	void	takeDamage(unsigned int amount);
+    void	attack(const std::string& target);
+	void	beRepaired(unsigned int amount);
     void    highFiveGuys();
 };
