@@ -24,6 +24,11 @@ void	Bureaucrat::IncrementGrade(void)
 	this->grade--;
 }
 
+void	Bureaucrat::signForm(Form paperwork)
+{
+	paperwork.BeSigned(*this);
+}
+
 Bureaucrat::Bureaucrat():name("Soulless Bureaucrat"), grade(150){
 }
 

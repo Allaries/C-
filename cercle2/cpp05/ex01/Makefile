@@ -1,8 +1,8 @@
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
-SRC = main.cpp src/Bureaucrat.cpp
-NAME = Bureaucrat
+SRC = main.cpp src/Bureaucrat.cpp src/Form.cpp
+NAME = Formup
 
 OBJDIR = AAA
 all : $(NAME)

@@ -1,4 +1,5 @@
 #include "include/Bureaucrat.hpp"
+#include "include/Form.hpp"
 
 int main(void)
 {
