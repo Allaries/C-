@@ -1,11 +1,11 @@
 #include "../include/Bureaucrat.hpp"
 
-const std::string	Bureaucrat::getName(void)
+const std::string	Bureaucrat::getName(void) const
 {
 	return (this->name);
 }
 
-int Bureaucrat::getGrade(void)
+int Bureaucrat::getGrade(void) const
 {
 	return (this->grade);
 }
@@ -61,4 +61,10 @@ Bureaucrat::Bureaucrat(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat()
 {
+}
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& employee)
+{
+	out << employee.getName() << " bureaucrat grade " << employee.getGrade();
+	return out;
 }

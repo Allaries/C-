@@ -6,10 +6,10 @@ int main(void)
     try
     {
         Bureaucrat bob("Thierry", 149);
-        std::cout << bob.getGrade() << std::endl;
-        bob.DecrementGrade();
-        std::cout << bob.getGrade() << std::endl;
-        bob.DecrementGrade();
+        Form work("some paper", 148, 120);
+        std::cout << bob << std::endl;
+        std::cout << work << std::endl;
+        bob.signForm(work);
     }
     catch (const std::exception& e)
     {

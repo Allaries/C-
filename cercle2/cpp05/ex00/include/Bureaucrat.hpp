@@ -18,8 +18,8 @@ public:
 	~Bureaucrat();
 	
 	//getter
-	const std::string getName();
-	int getGrade();
+	const std::string getName() const;
+	int getGrade() const;
 
 	//grade things
 	void	IncrementGrade();
@@ -38,5 +38,7 @@ public:
         	const char* what() const throw();
     };
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& employee);
 
 #endif

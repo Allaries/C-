@@ -1,8 +1,9 @@
 #ifndef FORM
 # define FORM
-# include "Bureaucrat.hpp"
 # include <iostream>
 # include <exception>
+
+class Bureaucrat;
 
 class Form
 {
@@ -14,7 +15,11 @@ private:
 
 public:
 
-	void	BeSigned(Bureaucrat employee);
+	int			getsign() const;
+	int			getexec() const;
+	std::string	getname() const;
+
+	void	BeSigned(const Bureaucrat& employee);
 
 	Form();
 	Form(std::string name, int tosigned, int toexec);
@@ -33,5 +38,6 @@ public:
     };
 };
 
+std::ostream& operator<<(std::ostream& out, const Form& paperwork);
 
 #endif

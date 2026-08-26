@@ -14,8 +14,8 @@ class Bureaucrat
 		//functions
 		void	signForm(Form paperwork);
 		//getter
-		const std::string getName();
-		int getGrade();
+		const std::string getName() const;
+		int getGrade() const;
 		
 		//grade things
 		void	IncrementGrade();
@@ -41,5 +41,7 @@ class Bureaucrat
 		Bureaucrat &operator=(const Bureaucrat &other);
 		~Bureaucrat();
 };
+
+std::ostream& operator<<(std::ostream& out, const Bureaucrat& employee);
 
 #endif

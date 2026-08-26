@@ -1,7 +1,22 @@
 #include "../include/Form.hpp"
 #include "../include/Bureaucrat.hpp"
 
-void    Form::BeSigned(Bureaucrat employee)
+int     Form::getsign(void) const
+{
+    return (this->tosign);
+}
+
+int     Form::getexec(void) const
+{
+    return (this->toexec);
+}
+
+std::string     Form::getname(void) const
+{
+    return (this->name);
+}
+
+void    Form::BeSigned(const Bureaucrat& employee)
 {
     if (this->issigned == 1)
     {
@@ -48,4 +63,10 @@ const char* Form::GradeTooHighException::what() const throw()
 const char* Form::GradeTooLowException::what() const throw()
 {
 	return "Grade too low";
+}
+
+std::ostream& operator<<(std::ostream& out, const Form& paperwork)
+{
+	out << paperwork.getname() << " Need grade " << paperwork.getsign() << " to be signed and grade " << paperwork.getexec() << " to be executed";
+	return out;
 }
