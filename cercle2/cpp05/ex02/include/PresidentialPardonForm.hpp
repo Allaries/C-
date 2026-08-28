@@ -5,8 +5,10 @@
 
 class PardonForm : virtual public AForm
 {
+private :
+	std::string target;
 public:
-	PardonForm();
+	PardonForm(std::string target);
 	PardonForm(const PardonForm& other);
 	void	execute(Bureaucrat const & executor) const;
 	~PardonForm();

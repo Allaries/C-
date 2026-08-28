@@ -16,6 +16,11 @@ std::string     AForm::getname(void) const
     return (this->name);
 }
 
+bool    AForm::executable(void) const
+{
+    return (this->issigned);
+}
+
 void    AForm::BeSigned(const Bureaucrat& employee)
 {
     if (this->issigned == 1)
@@ -25,7 +30,7 @@ void    AForm::BeSigned(const Bureaucrat& employee)
     }
     if (employee.getGrade() <= this->tosign)
     {
-        std::cout << employee.getName() << " signed " << this->name;
+        std::cout << employee.getName() << " signed " << this->name << std::endl;
         this->issigned = 1;
     }
     else
@@ -37,7 +42,7 @@ void    AForm::BeSigned(const Bureaucrat& employee)
 
 void	AForm::execute(Bureaucrat const & executor) const
 {
-    std::cout << executor.getName() << " : stfu bro i'm not signing this" << std::endl;
+    std::cout << executor.getName() << " : bro i'm not signing this" << std::endl;
 }
 
 AForm::AForm():name("random form"), issigned(0), tosign(150), toexec(148)
@@ -62,6 +67,11 @@ AForm::AForm(const AForm &other): name(getname()), issigned(0), tosign(other.get
 
 AForm::~AForm()
 {
+}
+
+const char* AForm::NotSignedException::what() const throw()
+{
+	return "This form is not signed";
 }
 
 const char* AForm::AlreadySignedException::what() const throw()

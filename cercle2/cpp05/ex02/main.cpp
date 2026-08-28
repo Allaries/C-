@@ -6,10 +6,11 @@ int main(void)
 {
     try
     {
-        AForm* work = new PardonForm();
-        Bureaucrat bob("Thierry", 149);
+        AForm* work = new PardonForm("Morty");
+        Bureaucrat bob("Thierry", 4);
         std::cout << bob << std::endl;
         std::cout << *work << std::endl;
+        bob.signForm(*work);
         work->execute(bob);
     }
     catch (const std::exception& e)

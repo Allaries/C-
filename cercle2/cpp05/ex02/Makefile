@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 SRC = main.cpp src/Bureaucrat.cpp src/AForm.cpp src/PresidentialPardonForm.cpp
-NAME = Formup
+NAME = LotOfForms
 
 OBJDIR = AAA
 all : $(NAME)

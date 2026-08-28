@@ -15,6 +15,7 @@ private:
 
 public:
 
+	bool			executable() const;
 	int			getsign() const;
 	int			getexec() const;
 	std::string	getname() const;
@@ -27,6 +28,12 @@ public:
 	AForm(std::string name, int tosigned, int toexec);
 	
 	virtual ~AForm();
+
+	class NotSignedException : public std::exception
+	{
+		public :
+			const char *what() const throw();
+	};
 
 	class AlreadySignedException : public std::exception
 	{
