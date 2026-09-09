@@ -54,6 +54,6 @@ public:
 	};
 };
 
-std::ostream& operator<<(std::ostream& out, const AForm& paperwork);
+std::ostream& operator<<(std::ostream& out, const AForm* paperwork);
 
 #endif

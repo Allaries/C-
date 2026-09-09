@@ -2,7 +2,7 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 SRC = main.cpp src/Bureaucrat.cpp src/AForm.cpp src/Intern.cpp src/PresidentialPardonForm.cpp src/RobotomyRequestForm.cpp src/ShrubberyCreationForm.cpp
-NAME = LotOfForms
+NAME = Internship
 
 OBJDIR = AAA
 all : $(NAME)
@@ -21,6 +21,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf *_shrubbery
 	@echo "All clean ++!"
 
 re: fclean all

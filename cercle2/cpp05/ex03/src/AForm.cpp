@@ -89,8 +89,8 @@ const char* AForm::GradeTooLowException::what() const throw()
 	return "Grade too low";
 }
 
-std::ostream& operator<<(std::ostream& out, const AForm& paperwork)
+std::ostream& operator<<(std::ostream& out, const AForm* paperwork)
 {
-	out << paperwork.getname() << " Need grade " << paperwork.getsign() << " to be signed and grade " << paperwork.getexec() << " to be executed";
+	out << paperwork->getname() << " Need grade " << paperwork->getsign() << " to be signed and grade " << paperwork->getexec() << " to be executed";
 	return out;
 }

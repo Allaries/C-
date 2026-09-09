@@ -8,11 +8,12 @@
 
 int main(void)
 {
-    // std::cout << "     ccee88oo\n  C8O8O8Q8PoOb o8oo\n dOB69QO8PdUOpugoO9bD\nCgggbU8OU qOp qOdoUOdcb\n    6OuU  /p u gcoUodpP\n      lllv o /douUP\n         |v///\n          ||||\n         |||\n         ||||\n   .....//||||.....\n";
     try
     {
         Intern clanker;
-        AForm *Form1A = clanker.makeForm("", "Kirk");
+        AForm *Form1A = clanker.makeForm("Shrubbery", "Kirk");
+        if (!Form1A)
+            return (0);
         Bureaucrat bob("Thierry", 4);
         std::cout << bob << std::endl;
         std::cout << Form1A << std::endl;
