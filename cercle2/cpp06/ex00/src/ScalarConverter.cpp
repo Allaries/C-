@@ -1,5 +1,42 @@
 #include "../include/ScalarConverter.hpp"
 
+void	PrintExecption(std::string value)
+{
+	std::cout << "char : impossible\nint : impossible\nfloat : " << value << std::endl << "double : " << value << std::endl;
+}
+
+void	printconvert(double value)
+{
+	// char
+	std::cout << "char : ";
+	if (value < 0 || value > 127)
+		std::cout << "impossible" << std::endl;
+	else if (!std::isprint(static_cast<int>(value)))
+		std::cout << "Non displayable" << std::endl;
+	else
+		std::cout << static_cast<char>(value) << std::endl;
+	
+	//int
+	std::cout << "int : ";
+	if (value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(value) << std::endl;
+	
+	//float
+	std::cout << "float : ";
+	if (value == static_cast<int>(value))
+   		std::cout << value << ".0f" << std::endl;
+	else
+   		std::cout << value << "f" << std::endl;
+	//double
+	std::cout << "double : ";
+	if (value == static_cast<int>(value))
+   		std::cout << value << ".0" << std::endl;
+	else
+   		std::cout << value << std::endl;
+}
+
 int	isint(std::string str)
 {
 	int i = 0;
@@ -76,22 +113,28 @@ void	ScalarConverter::convert(std::string str)
 {
 	double value = 0;
 	if ((str.compare("-inff") == 0 || str.compare("+inff") == 0 || str.compare("nanf") == 0))
+	{
+		PrintExecption(str);
 		return ;
-		//cas special
+	}
 	if ((str.compare("-inf") == 0 || str.compare("+inf") == 0 || str.compare("nan") == 0))
+	{
+		PrintExecption(str);
 		return ;
-		//cas special v2
+	}
 	if (str.length() == 1)
 	{
 		if (str[0] < 48 ||  str[0] > 57)
 		{
 			value = static_cast<double>(str[0]);
+			printconvert(value);
 			return ;
 		}
 	}
 	if (isint(str) == 1 || isfloat(str) == 1 || isdouble(str) == 1)
 	{
 		value = std::strtod(str.c_str(), NULL);
+		printconvert(value);
 		return ;
 	}
 	else

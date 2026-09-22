@@ -1,6 +1,7 @@
 #ifndef CONVERTER
 # define CONVERTER
 # include <cstdlib>
+# include <limits>
 # include <iostream>
 
 class ScalarConverter
