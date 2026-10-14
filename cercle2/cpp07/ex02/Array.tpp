@@ -30,15 +30,8 @@ const char* Array<T>::InvalidIndex::what() const throw()
 template<typename T>
 T& Array<T>::operator[](unsigned int index)
 {
-	try
-	{
-		if (index >= this->len)
-			throw InvalidIndex();
-		return this->ptr[index];
-	}
-	catch (const std::exception& e)
-    {
-        std::cout << e.what() << std::endl;
-		return ();
-    }
+
+	if (index >= this->len)
+		throw InvalidIndex();
+	return this->ptr[index];
 }

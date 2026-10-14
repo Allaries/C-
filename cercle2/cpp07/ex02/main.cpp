@@ -2,6 +2,13 @@
 
 
 int	main(void){
-	Array<int> A(5);
-	std::cout << A[7] << std::endl;
+	try
+	{
+		Array<int> A(10);
+		std::cout << A[123] << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
